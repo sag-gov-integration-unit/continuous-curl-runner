@@ -64,6 +64,7 @@ jobs:
           context: .
           build-args: |
             BASE_IMAGE=redhat/ubi8-minimal
+            BUILDER_IMAGE=redhat/ubi8-minimal
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}

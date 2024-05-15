@@ -4,12 +4,6 @@ services:
 
   continuous-curl-runner:
     image: ${REG}continuous-curl-runner:${TAG}
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        BASE_IMAGE: redhat/ubi8
-        BUILDER_IMAGE: redhat/ubi8
     volumes:
       - ./sample-requests.json:/sample-requests.json:ro
     environment: 
