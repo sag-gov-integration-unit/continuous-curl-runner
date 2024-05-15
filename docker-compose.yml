@@ -3,7 +3,7 @@ version: "3.8"
 services:
 
   continuous-curl-runner:
-    image: ${REG}continuous-curl-runner:${BUILD_TAG}
+    image: ${REG}continuous-curl-runner:${TAG}
     build:
       context: .
       dockerfile: Dockerfile
@@ -11,7 +11,7 @@ services:
         BASE_IMAGE: redhat/ubi8
         BUILDER_IMAGE: redhat/ubi8
     volumes:
-      - ${PWD}/sample-requests.json:/sample-requests.json:ro
+      - ./sample-requests.json:/sample-requests.json:ro
     environment: 
       CURL_OPTS: "--insecure"
       REQUESTS_JSON_FILE: /sample-requests.json
